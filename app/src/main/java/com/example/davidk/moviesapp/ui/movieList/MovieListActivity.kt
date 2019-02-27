@@ -28,7 +28,7 @@ class MovieListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_list)
-
+        setupRecyclerView(movie_list, twoPane)
         setSupportActionBar(toolbar)
         toolbar.title = title
 
@@ -46,7 +46,6 @@ class MovieListActivity : AppCompatActivity() {
             if (!it.isNullOrEmpty()){
                 frameLayout.visibility = View.VISIBLE
                 no_result.visibility = View.GONE
-                setupRecyclerView(movie_list, twoPane)
                 adapter.submitList(it)
             } else {
                 frameLayout.visibility = View.GONE
